@@ -46,10 +46,6 @@ int main()
 		listJadwal(filmpil,Film,Jadwal,Sinopsis);
 		ticket(filmpil,jadwalpil,Film,Jadwal,Sinopsis);
 		
-		printf("\n\n  Berapa Jumlah Tiket yang Diinginkan? : ");
-		
-		
-		
 		char seat[jumlahtiket][3];
 		
 		seating(seat, jumlahtiket);
