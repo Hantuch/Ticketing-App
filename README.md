@@ -7,7 +7,8 @@ it is separated into 5 main parts : Menu, List of Film, the Schedule of Chosen F
 
 We try to minimalizes error by giving users less freedom on input and limits most of user-input to arrow-keys input
 
-Planned Features : - Improved Seating Function (Simulation of Occupied Spaces and Coloration of Occupied & Selected Seating)
+Planned Features : - Improved Seating Function (Simulation of Occupied Spaces 
+                     and Coloration of Occupied & Selected Seating)
                    - Image Processing Function that edits a ticket template and outputs it (either in PNG , HTML, or PDF)
 
 This program was made for team project of course "Algoritma & Pemrograman" at Universitas Indonesia
