@@ -11,3 +11,7 @@ Planned Features : 1. Improved Seating Function (Simulation of Occupied Spaces a
                    2. Image Processing Function that edits a ticket template and outputs it (either in PNG , HTML, or PDF)
 
 This program was made for team project of course "Algoritma & Pemrograman" at Universitas Indonesia
+
+Changelog :
+18/12/18  - added date-based pricing function 
+          - minor improvements
