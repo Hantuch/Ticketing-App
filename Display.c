@@ -7,7 +7,7 @@
 char marker[4];
 
 void menudisp(int pilihan, int tipe)
-{	
+{
 	switch(pilihan)
 		{
 			case 1  : marker[0] = '>'; marker[1] = ' '; marker[2] = ' '; break;
@@ -15,10 +15,10 @@ void menudisp(int pilihan, int tipe)
 			case 3  : marker[0] = ' '; marker[1] = ' '; marker[2] = '>'; break;
 			default : marker[0] = ' '; marker[1] = ' '; marker[2] = ' '; break;
 		}
-		
+
 	if(tipe == 0)
-	{	
-	
+	{
+
 		system("cls");
 		printf("  ==============================================\n");
 		printf("  |                 Buy Ticket!                |\n");
@@ -35,7 +35,7 @@ void menudisp(int pilihan, int tipe)
 		printf("  |                 Buy Ticket!                |\n");
 		printf("  ==============================================\n");
 		printf("\n\n");
-				
+
 		printf(" Program ini membantu anda dalam pembelian tiket \n"
 			   " secara mandiri,langkah yang akan dilalui adalah \n"
 			   " sebagai berikut :\n\n");
@@ -43,12 +43,12 @@ void menudisp(int pilihan, int tipe)
 			   " -> Detil Pembayaran\n\n");
 		printf("	%c See Available Film\n", 		marker[0]);
 		printf("	%c Help				 \n", 		marker[1]);
-		printf("	%c Exit\n", marker[2]);	
+		printf("	%c Exit\n", marker[2]);
 	}
 }
 
 void listdisp(int pilihan, char judul[][40], char jadwal[][4][10])
-{	
+{
 	switch(pilihan)
 		{
 			case 1  : marker[0] = '>'; marker[1] = ' '; marker[2] = ' '; marker[3] = ' '; break;
@@ -56,8 +56,8 @@ void listdisp(int pilihan, char judul[][40], char jadwal[][4][10])
 			case 3  : marker[0] = ' '; marker[1] = ' '; marker[2] = '>'; marker[3] = ' '; break;
 			case 4  : marker[0] = ' '; marker[1] = ' '; marker[2] = ' '; marker[3] = '>'; break;
 			default : marker[0] = ' '; marker[1] = ' '; marker[2] = ' '; marker[3] = ' '; break;
-		}	
-	
+		}
+
 	system("cls");
 	printf("  ==============================================\n");
 	printf("  |                 Buy Ticket!                |\n");
@@ -81,10 +81,10 @@ void jadwaldisp(int pilihan,int pilihan2, char judul[][40], char jadwal[][4][10]
 			case 1  : marker2[0] = 10; marker2[1] = 15; marker2[2] = 15; marker2[3] = 15; break;
 			case 2  : marker2[0] = 15; marker2[1] = 10; marker2[2] = 15; marker2[3] = 15; break;
 			case 3  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 10; marker2[3] = 15; break;
-			case 4  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 10; break;			
+			case 4  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 10; break;
 			default : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 15; break;
 		}
-	
+
 	system("cls");
 	SetColor(15);
 	printf("  ==============================================\n");
@@ -92,7 +92,7 @@ void jadwaldisp(int pilihan,int pilihan2, char judul[][40], char jadwal[][4][10]
 	printf("  ==============================================\n");
 
 	printf("\n  %s\n\n",judul[pilihan-1]);
-	
+
 	for(i=0;i<2;i++)
 	{
 		printf("  %s\n", sinopsis[pilihan-1][i]);
@@ -103,7 +103,7 @@ void jadwaldisp(int pilihan,int pilihan2, char judul[][40], char jadwal[][4][10]
 	printcolor("[",marker2[0]);printcolor(jadwal[pilihan-1][0],marker2[0]);printcolor("] ",marker2[0]);
 	printcolor("[",marker2[1]);printcolor(jadwal[pilihan-1][1],marker2[1]);printcolor("] ",marker2[1]);
 	printcolor("[",marker2[2]);printcolor(jadwal[pilihan-1][2],marker2[2]);printcolor("] ",marker2[2]);
-	printcolor("[",marker2[3]);printcolor(jadwal[pilihan-1][3],marker2[3]);printcolor("] ",marker2[3]);	
+	printcolor("[",marker2[3]);printcolor(jadwal[pilihan-1][3],marker2[3]);printcolor("] ",marker2[3]);
 }
 
 void ticketdisp(int pilihan,int pilihan2,int pilihan3, char judul[][40], char jadwal[][4][10], char sinopsis[][2][50])
@@ -114,10 +114,10 @@ void ticketdisp(int pilihan,int pilihan2,int pilihan3, char judul[][40], char ja
 			case 1  : marker2[0] = 10; marker2[1] = 15; marker2[2] = 15; marker2[3] = 15; break;
 			case 2  : marker2[0] = 15; marker2[1] = 10; marker2[2] = 15; marker2[3] = 15; break;
 			case 3  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 10; marker2[3] = 15; break;
-			case 4  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 10; break;			
+			case 4  : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 10; break;
 			default : marker2[0] = 15; marker2[1] = 15; marker2[2] = 15; marker2[3] = 15; break;
 		}
-	
+
 	system("cls");
 	SetColor(15);
 	printf("  ==============================================\n");
@@ -125,7 +125,7 @@ void ticketdisp(int pilihan,int pilihan2,int pilihan3, char judul[][40], char ja
 	printf("  ==============================================\n");
 
 	printf("\n  %s\n\n",judul[pilihan-1]);
-	
+
 	for(i=0;i<2;i++)
 	{
 		printf("  %s\n", sinopsis[pilihan-1][i]);
@@ -136,12 +136,12 @@ void ticketdisp(int pilihan,int pilihan2,int pilihan3, char judul[][40], char ja
 	printcolor("[",marker2[0]);printcolor(jadwal[pilihan-1][0],marker2[0]);printcolor("] ",marker2[0]);
 	printcolor("[",marker2[1]);printcolor(jadwal[pilihan-1][1],marker2[1]);printcolor("] ",marker2[1]);
 	printcolor("[",marker2[2]);printcolor(jadwal[pilihan-1][2],marker2[2]);printcolor("] ",marker2[2]);
-	printcolor("[",marker2[3]);printcolor(jadwal[pilihan-1][3],marker2[3]);printcolor("] ",marker2[3]);	
-	
+	printcolor("[",marker2[3]);printcolor(jadwal[pilihan-1][3],marker2[3]);printcolor("] ",marker2[3]);
+
 	printf("\n\n");
 	printf("  Berapa Jumlah Tiket yang Anda Inginkan?\n");
 	printf("\n                     << %d >>\n", pilihan3);
-	
+
 }
 
 void seatingdisp(int theater)
@@ -151,7 +151,7 @@ void seatingdisp(int theater)
 		case 0 :
 			system("cls");
 			printf("  =====================================================================================================\n"
-				   "  |       ___________________________________________________________________________________         |\n" 
+				   "  |       ___________________________________________________________________________________         |\n"
 				   "  |      |_______________________________________LAYAR_______________________________________|        |\n"
 				   "  |                                                                                                   |\n"
 				   "  |                                                                                                   |\n"
@@ -173,9 +173,9 @@ void seatingdisp(int theater)
 				   "  |       |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|       |\n"
 				   "  |                                                                                                   |\n"
 				   "  =====================================================================================================");
-			return;		
+			return;
 			break;
-			
+
 		case 1 :
 			system("cls");
 			printf("=====================================================================================================\n"
@@ -202,7 +202,7 @@ void seatingdisp(int theater)
             	   "|                                                                                                   |\n"
 	               "=====================================================================================================");
 	        return;
-			break;	
+			break;
 	}
 }
 
@@ -235,5 +235,6 @@ void summarydisp(int pilihan, char judul[][40], char jadwal[][4][10], char seat[
 	printf("           %c [Lanjut]   %c [Keluar]", marker[0], marker[1]);
 	printf("\n\n");
 }
+
 
 

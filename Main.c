@@ -10,7 +10,7 @@
 
 //Ticketing App ver 3 - 17/10/18
 
-//Changelog 
+//Changelog
 //(24/10/2018)
 //-Added Date-based Pricing Function
 //(25/10/2018)
@@ -28,37 +28,37 @@ int filmpil, jadwalpil, jumlahtiket =2; //Kode Film, Jadwal, Jumlah Tiket yang d
 
 int main()
 {
-	char Film[4][40], Jadwal[4][4][10], Sinopsis[4][2][50]; 
-	
+	char Film[4][40], Jadwal[4][4][10], Sinopsis[4][2][50];
+
 	SetColor(15);
 	readFilm(Film);
 	readJadwal(Jadwal);
 	readSinopsis(Sinopsis);
-	
+
 	printf("%s", Sinopsis[2][1]);
 
 	while(TRUE)
 	{
-	
+
 		mainmenu();
-		
+
 		listFilm(Film,Jadwal);
 		listJadwal(filmpil,Film,Jadwal,Sinopsis);
 		ticket(filmpil,jadwalpil,Film,Jadwal,Sinopsis);
-		
+
 		char seat[jumlahtiket][3];
-		
+
 		seating(seat, jumlahtiket);
-		
+
 		summary(seat,Film,Jadwal,filmpil,jadwalpil,jumlahtiket);
 	}
-		return 0;	
+		return 0;
 }
 
 void mainmenu()
 {
 	int pilihan = 1, tipe = 0;
-	menudisp(pilihan, tipe);	
+	menudisp(pilihan, tipe);
 	while(TRUE)
 	{
 		chinput = getch();
@@ -67,13 +67,13 @@ void mainmenu()
 			case 13 :
 				switch(pilihan)
 				{
-					case 1 : 
+					case 1 :
 						return ; break;
-					case 2 : 
+					case 2 :
 						tipe = 1;
 						menudisp(pilihan, tipe);
 						break;
-					case 3 : 
+					case 3 :
 						exit(0); break;
 				}
 				break;
@@ -87,7 +87,7 @@ void mainmenu()
 				if(pilihan == 0){ pilihan = 3;}
 				menudisp(pilihan, tipe);
 				break;
-			default : 
+			default :
 				menudisp(pilihan, tipe);
 				fflush(stdin);
 				break;
@@ -98,9 +98,9 @@ void mainmenu()
 void listFilm(char judul[4][40] ,char jadwal[][4][10])
 {
 	int pilihan = 1;
-	
+
 	listdisp(pilihan,judul,jadwal);
-	
+
 	while((chinput = getch()) != 27)
 	{
 		switch(chinput)
@@ -147,9 +147,9 @@ void listFilm(char judul[4][40] ,char jadwal[][4][10])
 void listJadwal(int filmpil ,char judul[][40] ,char jadwal[][4][10], char sinopsis[][2][50])
 {
 	int pilhrzntl = 1, tipe = 0;
-	
+
 	jadwaldisp(filmpil,pilhrzntl,judul,jadwal,sinopsis);
-	
+
 	while((chinput = getch()) != 27)
 	{
 		switch(chinput)
@@ -175,7 +175,7 @@ void listJadwal(int filmpil ,char judul[][40] ,char jadwal[][4][10], char sinops
 						break;
 				}
 				break;
-	
+
 			case 77 :
 				pilhrzntl++;
 				if(pilhrzntl == 5){ pilhrzntl = 1;}
@@ -198,7 +198,7 @@ void ticket(int filmpil ,int jadwalpil,char judul[][40] ,char jadwal[][4][10], c
 {
 	int pilhrzntl = 1;
 	ticketdisp(filmpil,jadwalpil,pilhrzntl,judul,jadwal,sinopsis);
-	
+
 	while((chinput = getch()) != 27)
 	{
 		switch(chinput)
@@ -207,7 +207,7 @@ void ticket(int filmpil ,int jadwalpil,char judul[][40] ,char jadwal[][4][10], c
 				jumlahtiket = pilhrzntl;
 				return;
 				break;
-	
+
 			case 77 :
 				pilhrzntl++;
 				ticketdisp(filmpil,jadwalpil,pilhrzntl,judul,jadwal,sinopsis);
@@ -226,12 +226,12 @@ void ticket(int filmpil ,int jadwalpil,char judul[][40] ,char jadwal[][4][10], c
 }
 
 void seating(char input[][3], int jumlahtiket)
-{	
+{
 	int theater;
 	srand(time(NULL));
 	theater = rand() % 2;
 	seatingdisp(theater);
-	
+
 	for(i=0;i<jumlahtiket;i++)
 	{
 		seatingdisp(theater);
@@ -250,9 +250,9 @@ int price()
 	time( &rawtime );
 
 	info = localtime( &rawtime );
-	
-	strftime(day,2,"%w", info);	
-   
+
+	strftime(day,2,"%w", info);
+
 	switch(day[0])
 	{
 		case '0' : case '6' :
@@ -260,16 +260,16 @@ int price()
 			break;
 		case '1' : case '2' : case '3' : case '4' : case '5' :
 			return 40000;
-			break; 
+			break;
 	}
 }
 
 void summary(char seat[][3], char judul[][40] ,char jadwal[][4][10] ,int filmpil ,int jadwalpil ,int jumlahtiket)
 {
 	int pilihan = 1;
-	
+
 	summarydisp(pilihan, judul,jadwal,seat,filmpil,jadwalpil,jumlahtiket);
-	
+
 	while((chinput = getch()) != 27)
 	{
 		switch(chinput)
@@ -277,11 +277,11 @@ void summary(char seat[][3], char judul[][40] ,char jadwal[][4][10] ,int filmpil
 			case 13 :
 				switch(pilihan)
 				{
-					case 1 : 
+					case 1 :
 						fflush(stdin);
 						fflush(stdout);
 						return ; break;
-					case 2 : 
+					case 2 :
 						exit(0); break;
 				}
 				break;
@@ -295,7 +295,7 @@ void summary(char seat[][3], char judul[][40] ,char jadwal[][4][10] ,int filmpil
 				if(pilihan == 0){ pilihan = 2;}
 				summarydisp(pilihan, judul,jadwal,seat,filmpil,jadwalpil,jumlahtiket);
 				break;
-			default : 
+			default :
 				summarydisp(pilihan, judul,jadwal,seat,filmpil,jadwalpil,jumlahtiket);
 				fflush(stdin);
 				break;
@@ -307,7 +307,7 @@ void readFilm(char input[][40])
 {
 	int i= 0;
 	FILE *ptrfile;
-	
+
 	ptrfile = fopen("ListFilm.txt","r");
 
 	while(!feof(ptrfile))
@@ -317,7 +317,7 @@ void readFilm(char input[][40])
 			input[i][strcspn(input[i], "\n")] = 0;
 			i++;
 		}
-	}	
+	}
 	fclose(ptrfile);
 }
 
@@ -326,7 +326,7 @@ void readJadwal(char input[][4][10])
 	i= 0;
 	FILE *ptrfile;
 	char temp[4][40];
-	
+
 	ptrfile = fopen("Jadwal.txt","r");
 
 	while(!feof(ptrfile))
@@ -336,13 +336,13 @@ void readJadwal(char input[][4][10])
 			temp[i][strcspn(temp[i], "\n")] = 0;
 			i++;
 		}
-	}	
+	}
 	fclose(ptrfile);
-	
+
 	for(i=0;i<4;i++)
 	{
 		j = 0;
-		sscanf(temp[i], "%s %s %s %s", &input[i][j], &input[i][j+1], &input[i][j+2], &input[i][j+3]);
+		sscanf(temp[i], "%s %s %s %s", input[i][j], input[i][j+1], input[i][j+2], &input[i][j+3]);
 	}
 }
 
@@ -351,7 +351,7 @@ void readSinopsis(char input[][2][50])
 	char sinopsis[8][50];
 	int i= 0, j=0, k;
 	FILE *ptrfile;
-	
+
 	ptrfile = fopen("Sinopsis.txt","r");
 
 	while(!feof(ptrfile))
@@ -361,10 +361,10 @@ void readSinopsis(char input[][2][50])
 			sinopsis[i][strcspn(sinopsis[i], "\n")] = 0;
 			i++;
 		}
-	}	
+	}
 
 	fclose(ptrfile);
-	
+
 	i = 0;
 	for(j=0;j<4;j++)
 	{
@@ -377,3 +377,4 @@ void readSinopsis(char input[][2][50])
 		}
 	}
 }
+
